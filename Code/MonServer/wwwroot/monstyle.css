@@ -1,0 +1,47 @@
+/* Selecteur css */
+#counter{
+
+}
+
+.titre{
+
+}
+
+input{
+
+}
+
+input.titre{
+
+}
+
+input,.titre{}
+
+.titre input{
+
+}
+
+.titre > input{
+
+}
+
+button[disabled]{
+
+}
+
+input[type="text"]{
+
+}
+/* Liens non sécurisés */
+a[href^="http:"]{
+
+}
+/* Lienspdf */
+a[href$=".pdf"]{
+
+}
+
+/* Liens contenant google */
+a[href~="google"]{
+
+}
