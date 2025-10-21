@@ -5,6 +5,7 @@
 import * as services from "../scripts/services.js";
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#btn_get_result").addEventListener("click",
         async function () {
