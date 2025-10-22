@@ -8,9 +8,22 @@ const express = require('express');
 // Créer un serveur web
 const monserveur=express();
 
+// Affecte une fonction au traitement de la requete
+// Get /data
+monserveur.get("/data",(req,res)=>{
+    // Aller chercher dans une BDD et ramener l'objet personne
+    let personne={
+        nom:"Toto",
+        dateNaissance:new Date()
+    }
+    // Envoi de la personne en json
+    res.send(personne);
+})
+
 // J'utilise un middleware dont le role est de servir des fichiers statiques
 // dans le répertoire wwwroot
 monserveur.use(express.static('wwwroot'));
+
 
 
 // Lancement du serveur => opération asynchrone
