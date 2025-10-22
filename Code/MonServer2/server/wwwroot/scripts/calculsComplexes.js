@@ -1,26 +1,2 @@
-export function calculsCompexesAsync(a, b, callbackProgress) {
-    // Utilisation de Web Worker pour exécuter des calculs complexes en arrière-plan
-    let worker = new Worker("/scripts/calcul-complexe.worker.js");
-    // envoi des données au worker
-    worker.postMessage({ a: a, b: b });
-    //creation d'une promesse pour gérer la réponse asynchrone
-    return new Promise(function (resolve, reject) {
-        // attente des messages du worker
-        worker.addEventListener("message", function (e) {
-            // si progression
-            if (e.data.progress) {
-                //  (document.querySelector("#result")! as HTMLDivElement).innerText=(`Progression : ${e.data.progress}%`);
-                // Le callback de progression sera fourni par le code appelant (facultatif)
-                // s'il est founi, on l'appelle avec la valeur de progression
-                if (callbackProgress) {
-                    callbackProgress(e.data.progress);
-                }
-            }
-            // si résultat
-            if (e.data.result) {
-                resolve(e.data.result);
-            }
-        });
-    });
-}
-;
+function calculsCompexesAsync(e,s,r){let t=new Worker("/scripts/calcul-complexe.worker.js");return t.postMessage({a:e,b:s}),new Promise(function(s,e){t.addEventListener("message",function(e){e.data.progress&&r&&r(e.data.progress),e.data.result&&s(e.data.result)})})}export{calculsCompexesAsync};
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjcmlwdHMvY2FsY3Vsc0NvbXBsZXhlcy50cyJdLCJuYW1lcyI6WyJjYWxjdWxzQ29tcGV4ZXNBc3luYyIsImEiLCJiIiwiY2FsbGJhY2tQcm9ncmVzcyIsImxldCIsIndvcmtlciIsIldvcmtlciIsInBvc3RNZXNzYWdlIiwiUHJvbWlzZSIsInJlc29sdmUiLCJyZWplY3QiLCJhZGRFdmVudExpc3RlbmVyIiwiZSIsImRhdGEiLCJwcm9ncmVzcyIsInJlc3VsdCJdLCJtYXBwaW5ncyI6IkFBQU0sU0FBVUEscUJBQXFCQyxFQUFVQyxFQUFVQyxHQUVyREMsSUFBSUMsRUFBUyxJQUFJQyxPQUFPLG9DQUFvQyxFQUk1RCxPQUZBRCxFQUFPRSxZQUFZLENBQUVOLEVBQUdBLEVBQUdDLEVBQUdBLENBQUMsQ0FBRSxFQUUxQixJQUFJTSxRQUFRLFNBQVVDLEVBQVNDLEdBRWxDTCxFQUFPTSxpQkFBaUIsVUFBVyxTQUFVQyxHQUVyQ0EsRUFBRUMsS0FBS0MsVUFJSFgsR0FDQUEsRUFBaUJTLEVBQUVDLEtBQUtDLFFBQVEsRUFJcENGLEVBQUVDLEtBQUtFLFFBQ1BOLEVBQVFHLEVBQUVDLEtBQUtFLE1BQU0sQ0FFN0IsQ0FBQyxDQUNMLENBQUMsQ0FDTCxRQXhCZ0JmLG9CQXdCZiIsImZpbGUiOiJzY3JpcHRzL2NhbGN1bHNDb21wbGV4ZXMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZnVuY3Rpb24gY2FsY3Vsc0NvbXBleGVzQXN5bmMoYTpudW1iZXIsIGI6bnVtYmVyLCBjYWxsYmFja1Byb2dyZXNzPyA6IChwcm9ncmVzczpudW1iZXIpPT52b2lkKTogUHJvbWlzZTxudW1iZXI+IHtcclxuICAgIC8vIFV0aWxpc2F0aW9uIGRlIFdlYiBXb3JrZXIgcG91ciBleMOpY3V0ZXIgZGVzIGNhbGN1bHMgY29tcGxleGVzIGVuIGFycmnDqHJlLXBsYW5cclxuICAgIGxldCB3b3JrZXIgPSBuZXcgV29ya2VyKFwiL3NjcmlwdHMvY2FsY3VsLWNvbXBsZXhlLndvcmtlci5qc1wiKTtcclxuICAgIC8vIGVudm9pIGRlcyBkb25uw6llcyBhdSB3b3JrZXJcclxuICAgIHdvcmtlci5wb3N0TWVzc2FnZSh7IGE6IGEsIGI6IGIgfSk7XHJcbiAgICAvL2NyZWF0aW9uIGQndW5lIHByb21lc3NlIHBvdXIgZ8OpcmVyIGxhIHLDqXBvbnNlIGFzeW5jaHJvbmVcclxuICAgIHJldHVybiBuZXcgUHJvbWlzZShmdW5jdGlvbiAocmVzb2x2ZSwgcmVqZWN0KSB7XHJcbiAgICAgICAgLy8gYXR0ZW50ZSBkZXMgbWVzc2FnZXMgZHUgd29ya2VyXHJcbiAgICAgICAgd29ya2VyLmFkZEV2ZW50TGlzdGVuZXIoXCJtZXNzYWdlXCIsIGZ1bmN0aW9uIChlKSB7XHJcbiAgICAgICAgICAgIC8vIHNpIHByb2dyZXNzaW9uXHJcbiAgICAgICAgICAgIGlmIChlLmRhdGEucHJvZ3Jlc3MpIHtcclxuICAgICAgICAgICAgICAgIC8vICAoZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIiNyZXN1bHRcIikhIGFzIEhUTUxEaXZFbGVtZW50KS5pbm5lclRleHQ9KGBQcm9ncmVzc2lvbiA6ICR7ZS5kYXRhLnByb2dyZXNzfSVgKTtcclxuICAgICAgICAgICAgICAgIC8vIExlIGNhbGxiYWNrIGRlIHByb2dyZXNzaW9uIHNlcmEgZm91cm5pIHBhciBsZSBjb2RlIGFwcGVsYW50IChmYWN1bHRhdGlmKVxyXG4gICAgICAgICAgICAgICAgLy8gcydpbCBlc3QgZm91bmksIG9uIGwnYXBwZWxsZSBhdmVjIGxhIHZhbGV1ciBkZSBwcm9ncmVzc2lvblxyXG4gICAgICAgICAgICAgICAgaWYgKGNhbGxiYWNrUHJvZ3Jlc3MpIHtcclxuICAgICAgICAgICAgICAgICAgICBjYWxsYmFja1Byb2dyZXNzKGUuZGF0YS5wcm9ncmVzcyk7XHJcbiAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgLy8gc2kgcsOpc3VsdGF0XHJcbiAgICAgICAgICAgIGlmIChlLmRhdGEucmVzdWx0KSB7XHJcbiAgICAgICAgICAgICAgICByZXNvbHZlKGUuZGF0YS5yZXN1bHQpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfSk7XHJcbiAgICB9KTtcclxufTsiXX0=

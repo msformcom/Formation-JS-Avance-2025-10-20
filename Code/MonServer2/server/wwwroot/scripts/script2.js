@@ -1,5 +1,2 @@
-var count=12;
-setInterval(()=>{
-
-    count=12;
-},1000);
+var count=12;setInterval(()=>{count=12},1e3);
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2NyaXB0cy9zY3JpcHQyLmpzIiwic291cmNlcyI6WyJzY3JpcHRzL3NjcmlwdDIuanMiXSwic291cmNlc0NvbnRlbnQiOlsidmFyIGNvdW50PTEyO1xyXG5zZXRJbnRlcnZhbCgoKT0+e1xyXG5cclxuICAgIGNvdW50PTEyO1xyXG59LDEwMDApOyJdLCJuYW1lcyI6WyJjb3VudCIsInNldEludGVydmFsIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxNQUFNLEdBQ1ZDLFlBQVksS0FFUkQsTUFBTSxFQUNWLEVBQUUsR0FBSSJ9

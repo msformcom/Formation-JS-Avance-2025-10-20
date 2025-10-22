@@ -4,6 +4,8 @@
 
 import * as services from "../scripts/services.js";
 
+// $("#btn_get_result").html("");
+
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector("#btn_get_result")!.addEventListener("click",

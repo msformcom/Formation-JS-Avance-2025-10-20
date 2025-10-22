@@ -1,0 +1,1 @@
+{"version":3,"file":"script2.js","sources":["scripts/script2.js"],"sourcesContent":["var count=12;\r\nsetInterval(()=>{\r\n\r\n    count=12;\r\n},1000);"],"names":["count","setInterval"],"mappings":"AAAA,IAAIA,MAAM,GACVC,YAAY,KAERD,MAAM,EACV,EAAE,GAAI"}

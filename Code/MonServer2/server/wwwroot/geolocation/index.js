@@ -1,21 +1,2 @@
-// import { getPositionAsync as getPositionAsync } from "../scripts/geolocation.js";
-// import { calculsCompexesAsync } from "../scripts/calculsComplexes.js";
-import * as services from "../scripts/services.js";
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("#btn_get_result").addEventListener("click", async function () {
-        let divResult = document.querySelector("#result");
-        try {
-            let pos = await services.getPositionAsync();
-            let r = await services.calculsCompexesAsync(2000000000, 2000000000, (p) => {
-                // callback appelé dans la fonction calculsCompexesAsync
-                // pour me permettre de mettre à jour l'affichage de la progression
-                divResult.innerText = `Progression : ${p}%`;
-            });
-            divResult.innerText = `Latitude : ${pos.lat} - Longitude : ${pos.long} - Resultat calcul : ${r}`;
-        }
-        catch (err) {
-            divResult.innerText = `Erreur : ${err.message}`;
-        }
-    });
-});
-// utiliser cette fonction dans le click du bouton pour afficher la lattitude et la longitude dans la page
+import*as services from"../scripts/services.js";document.addEventListener("DOMContentLoaded",function(){document.querySelector("#btn_get_result").addEventListener("click",async function(){let t=document.querySelector("#result");try{var e=await services.getPositionAsync(),n=await services.calculsCompexesAsync(2e9,2e9,e=>{t.innerText=`Progression : ${e}%`});t.innerText=`Latitude : ${e.lat} - Longitude : ${e.long} - Resultat calcul : `+n}catch(e){t.innerText="Erreur : "+e.message}})});
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdlb2xvY2F0aW9uL2luZGV4LnRzIl0sIm5hbWVzIjpbInNlcnZpY2VzIiwiZG9jdW1lbnQiLCJhZGRFdmVudExpc3RlbmVyIiwicXVlcnlTZWxlY3RvciIsImFzeW5jIiwibGV0IiwiZGl2UmVzdWx0IiwicG9zIiwiYXdhaXQiLCJnZXRQb3NpdGlvbkFzeW5jIiwiciIsImNhbGN1bHNDb21wZXhlc0FzeW5jIiwiaW5uZXJUZXh0IiwicCIsImxhdCIsImxvbmciLCJlcnIiLCJtZXNzYWdlIl0sIm1hcHBpbmdzIjoiTUFJWUEsaUJBQWMseUJBSzFCQyxTQUFTQyxpQkFBaUIsbUJBQW9CLFdBQzFDRCxTQUFTRSxjQUFjLGlCQUFpQixFQUFHRCxpQkFBaUIsUUFDeERFLGlCQUNJQyxJQUFJQyxFQUFZTCxTQUFTRSxjQUFjLFNBQVMsRUFDaEQsSUFDSUUsSUFBSUUsRUFBTUMsTUFBTVIsU0FBU1MsaUJBQWdCLEVBQ3JDQyxFQUFFRixNQUFNUixTQUFTVyxxQkFBcUIsSUFBWSxJQUFXLElBRzdETCxFQUFVTSwyQkFBNkJDLElBQzNDLENBQUMsRUFDRFAsRUFBVU0sd0JBQTBCTCxFQUFJTyxxQkFBcUJQLEVBQUlRLDRCQUE0QkwsQ0FLakcsQ0FIQSxNQUFPTSxHQUVIVixFQUFVTSxVQUFZLFlBQVlJLEVBQUlDLE9BQzFDLENBQ0osQ0FBQyxDQUVULENBQUMiLCJmaWxlIjoiZ2VvbG9jYXRpb24vaW5kZXguanMiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLy8gaW1wb3J0IHsgZ2V0UG9zaXRpb25Bc3luYyBhcyBnZXRQb3NpdGlvbkFzeW5jIH0gZnJvbSBcIi4uL3NjcmlwdHMvZ2VvbG9jYXRpb24uanNcIjtcclxuLy8gaW1wb3J0IHsgY2FsY3Vsc0NvbXBleGVzQXN5bmMgfSBmcm9tIFwiLi4vc2NyaXB0cy9jYWxjdWxzQ29tcGxleGVzLmpzXCI7XHJcblxyXG5pbXBvcnQgKiBhcyBzZXJ2aWNlcyBmcm9tIFwiLi4vc2NyaXB0cy9zZXJ2aWNlcy5qc1wiO1xyXG5cclxuLy8gJChcIiNidG5fZ2V0X3Jlc3VsdFwiKS5odG1sKFwiXCIpO1xyXG5cclxuXHJcbmRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoXCJET01Db250ZW50TG9hZGVkXCIsIGZ1bmN0aW9uICgpIHtcclxuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjYnRuX2dldF9yZXN1bHRcIikhLmFkZEV2ZW50TGlzdGVuZXIoXCJjbGlja1wiLFxyXG4gICAgICAgIGFzeW5jIGZ1bmN0aW9uICgpIHtcclxuICAgICAgICAgICAgbGV0IGRpdlJlc3VsdCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIjcmVzdWx0XCIpISBhcyBIVE1MRGl2RWxlbWVudDtcclxuICAgICAgICAgICAgdHJ5IHtcclxuICAgICAgICAgICAgICAgIGxldCBwb3MgPSBhd2FpdCBzZXJ2aWNlcy5nZXRQb3NpdGlvbkFzeW5jKCk7XHJcbiAgICAgICAgICAgICAgICBsZXQgcj1hd2FpdCBzZXJ2aWNlcy5jYWxjdWxzQ29tcGV4ZXNBc3luYygyMDAwMDAwMDAwLCAyMDAwMDAwMDAwLChwKT0+e1xyXG4gICAgICAgICAgICAgICAgICAgIC8vIGNhbGxiYWNrIGFwcGVsw6kgZGFucyBsYSBmb25jdGlvbiBjYWxjdWxzQ29tcGV4ZXNBc3luY1xyXG4gICAgICAgICAgICAgICAgICAgIC8vIHBvdXIgbWUgcGVybWV0dHJlIGRlIG1ldHRyZSDDoCBqb3VyIGwnYWZmaWNoYWdlIGRlIGxhIHByb2dyZXNzaW9uXHJcbiAgICAgICAgICAgICAgICAgICAgZGl2UmVzdWx0LmlubmVyVGV4dCA9IGBQcm9ncmVzc2lvbiA6ICR7cH0lYDtcclxuICAgICAgICAgICAgICAgIH0pO1xyXG4gICAgICAgICAgICAgICAgZGl2UmVzdWx0LmlubmVyVGV4dCA9IGBMYXRpdHVkZSA6ICR7cG9zLmxhdH0gLSBMb25naXR1ZGUgOiAke3Bvcy5sb25nfSAtIFJlc3VsdGF0IGNhbGN1bCA6ICR7cn1gO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgICAgIGNhdGNoIChlcnIgOmFueSApIHtcclxuXHJcbiAgICAgICAgICAgICAgICBkaXZSZXN1bHQuaW5uZXJUZXh0ID0gYEVycmV1ciA6ICR7ZXJyLm1lc3NhZ2V9YDtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgICk7XHJcbn0pO1xyXG4vLyB1dGlsaXNlciBjZXR0ZSBmb25jdGlvbiBkYW5zIGxlIGNsaWNrIGR1IGJvdXRvbiBwb3VyIGFmZmljaGVyIGxhIGxhdHRpdHVkZSBldCBsYSBsb25naXR1ZGUgZGFucyBsYSBwYWdlIl19

@@ -1,10 +1,2 @@
-export function getPositionAsync() {
-    // retourne une promesse avec un objet {lat,long};
-    return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition((result) => {
-            resolve({ lat: result.coords.latitude, long: result.coords.longitude });
-        }, (err) => {
-            reject(err);
-        });
-    });
-}
+function getPositionAsync(){return new Promise((t,n)=>{navigator.geolocation.getCurrentPosition(o=>{t({lat:o.coords.latitude,long:o.coords.longitude})},o=>{n(o)})})}export{getPositionAsync};
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNjcmlwdHMvZ2VvbG9jYXRpb24udHMiXSwibmFtZXMiOlsiZ2V0UG9zaXRpb25Bc3luYyIsIlByb21pc2UiLCJyZXNvbHZlIiwicmVqZWN0IiwibmF2aWdhdG9yIiwiZ2VvbG9jYXRpb24iLCJnZXRDdXJyZW50UG9zaXRpb24iLCJsYXQiLCJyZXN1bHQiLCJjb29yZHMiLCJsYXRpdHVkZSIsImxvbmciLCJsb25naXR1ZGUiLCJlcnIiXSwibWFwcGluZ3MiOiJBQUFNLFNBQVVBLG1CQUVaLE9BQU8sSUFBSUMsUUFBUSxDQUFDQyxFQUFTQyxLQUN6QkMsVUFBVUMsWUFBWUMsbUJBQ2xCLElBQ0lKLEVBQVEsQ0FBQ0ssSUFBSUMsRUFBT0MsT0FBT0MsU0FBVUMsS0FBS0gsRUFBT0MsT0FBT0csU0FBUyxDQUFDLENBQ3RFLEVBQ0EsSUFDSVQsRUFBT1UsQ0FBRyxDQUNkLENBQUMsQ0FDVCxDQUFDLENBQ0wsUUFYZ0JiLGdCQVdoQiIsImZpbGUiOiJzY3JpcHRzL2dlb2xvY2F0aW9uLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGZ1bmN0aW9uIGdldFBvc2l0aW9uQXN5bmMoKSA6IFByb21pc2U8e2xhdDpudW1iZXIsIGxvbmc6bnVtYmVyfT4ge1xyXG4gICAgLy8gcmV0b3VybmUgdW5lIHByb21lc3NlIGF2ZWMgdW4gb2JqZXQge2xhdCxsb25nfTtcclxuICAgIHJldHVybiBuZXcgUHJvbWlzZSgocmVzb2x2ZSwgcmVqZWN0KT0+e1xyXG4gICAgICAgIG5hdmlnYXRvci5nZW9sb2NhdGlvbi5nZXRDdXJyZW50UG9zaXRpb24oXHJcbiAgICAgICAgICAgIChyZXN1bHQpPT57XHJcbiAgICAgICAgICAgICAgICByZXNvbHZlKHtsYXQ6cmVzdWx0LmNvb3Jkcy5sYXRpdHVkZSwgbG9uZzpyZXN1bHQuY29vcmRzLmxvbmdpdHVkZX0pO1xyXG4gICAgICAgICAgICB9LFxyXG4gICAgICAgICAgICAoZXJyKT0+e1xyXG4gICAgICAgICAgICAgICAgcmVqZWN0KGVycik7XHJcbiAgICAgICAgICAgIH0pO1xyXG4gICAgfSk7XHJcbn0iXX0=
